@@ -3,8 +3,8 @@
 To import the Sakila database into the server use the following command:
 
 ```
-mysql -u root -p < sakila-schema.sql
-mysql -u root -p < sakila-data.sql
+mysql --host=localhost --port=3306 --protocol=tcp -u root -p < sakila-schema.sql
+mysql --host=localhost --port=3306 --protocol=tcp -u root -p < sakila-data.sql
 ```
 
 # Explore the Sakila DB
