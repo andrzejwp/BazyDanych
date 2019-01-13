@@ -1,0 +1,291 @@
+mysqld, Version: 5.6.35-log (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 190109  6:36:00
+# User@Host: root[root] @ localhost []  Id:     1
+# Query_time: 0.903757  Lock_time: 0.000988 Rows_sent: 4228  Rows_examined: 5228
+use adb;
+SET timestamp=1547015760;
+select * from rental inner join movie on movie.id=rental.id_movie where movie.title='academy dinosaur';
+# Time: 190109  6:38:48
+# User@Host: root[root] @ localhost []  Id:     1
+# Query_time: 38.424599  Lock_time: 0.001233 Rows_sent: 12  Rows_examined: 914569
+SET timestamp=1547015928;
+select genre_name,count(*) from rental inner join movie on movie.id=rental.id_movie inner join movie_genre on movie_genre.id=movie.genre where genre_name='action'  group by month(date_of_rental);
+# Time: 190109  7:09:14
+# User@Host: root[root] @ localhost []  Id:     2
+# Query_time: 0.013604  Lock_time: 0.000664 Rows_sent: 1810  Rows_examined: 1810
+SET timestamp=1547017754;
+select * from payment;
+# Time: 190109  7:10:31
+# User@Host: root[root] @ localhost []  Id:     2
+# Query_time: 0.275023  Lock_time: 0.001569 Rows_sent: 0  Rows_examined: 20668
+SET timestamp=1547017831;
+delete from payment;
+# Time: 190109  7:11:03
+# User@Host: root[root] @ localhost []  Id:     2
+# Query_time: 0.001229  Lock_time: 0.000594 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1547017863;
+select * from payment;
+# Time: 190109  7:11:07
+# User@Host: root[root] @ localhost []  Id:     2
+# Query_time: 0.005713  Lock_time: 0.000805 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1547017867;
+delete from payment;
+# Time: 190109  7:11:10
+# User@Host: root[root] @ localhost []  Id:     2
+# Query_time: 0.001195  Lock_time: 0.000314 Rows_sent: 379  Rows_examined: 379
+SET timestamp=1547017870;
+select * from payment;
+# Time: 190109  7:14:46
+# User@Host: root[root] @ localhost []  Id:     2
+# Query_time: 0.077727  Lock_time: 0.000205 Rows_sent: 1  Rows_examined: 58546
+SET timestamp=1547018086;
+select count(*) from payment;
+# Time: 190109  7:15:00
+# User@Host: root[root] @ localhost []  Id:     2
+# Query_time: 0.700077  Lock_time: 0.001193 Rows_sent: 0  Rows_examined: 60827
+SET timestamp=1547018100;
+delete from payment;
+# Time: 190109  7:16:53
+# User@Host: root[root] @ localhost []  Id:     2
+# Query_time: 0.002701  Lock_time: 0.000147 Rows_sent: 1369  Rows_examined: 1369
+SET timestamp=1547018213;
+select * from payment;
+# Time: 190109  7:17:11
+# User@Host: root[root] @ localhost []  Id:     8
+# Query_time: 0.019891  Lock_time: 0.002354 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547018231;
+SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IN (SELECT DISTINCT LOGFILE_GROUP_NAME FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('adb'))) GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE ORDER BY LOGFILE_GROUP_NAME;
+# User@Host: root[root] @ localhost []  Id:     8
+# Query_time: 0.005253  Lock_time: 0.001099 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547018231;
+SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('adb')) ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME;
+# User@Host: root[root] @ localhost []  Id:     8
+# Query_time: 0.037853  Lock_time: 0.000000 Rows_sent: 10000  Rows_examined: 10000
+SET timestamp=1547018231;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `actor`;
+# User@Host: root[root] @ localhost []  Id:     8
+# Query_time: 0.030152  Lock_time: 0.000000 Rows_sent: 10000  Rows_examined: 10000
+SET timestamp=1547018231;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `actor_movie`;
+# User@Host: root[root] @ localhost []  Id:     8
+# Query_time: 0.199137  Lock_time: 0.000000 Rows_sent: 62096  Rows_examined: 62096
+SET timestamp=1547018231;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `customer`;
+# User@Host: root[root] @ localhost []  Id:     8
+# Query_time: 0.005689  Lock_time: 0.000000 Rows_sent: 1000  Rows_examined: 1000
+SET timestamp=1547018231;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `movie`;
+# User@Host: root[root] @ localhost []  Id:     8
+# Query_time: 0.000514  Lock_time: 0.000000 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1547018231;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `movie_genre`;
+# User@Host: root[root] @ localhost []  Id:     8
+# Query_time: 0.026716  Lock_time: 0.000000 Rows_sent: 6251  Rows_examined: 6251
+SET timestamp=1547018231;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `payment`;
+# Time: 190109  7:17:21
+# User@Host: root[root] @ localhost []  Id:     8
+# Query_time: 9.865754  Lock_time: 0.000000 Rows_sent: 4175599  Rows_examined: 4175599
+SET timestamp=1547018241;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `rental`;
+# Time: 190109  7:18:08
+# User@Host: root[root] @ localhost []  Id:     9
+# Query_time: 0.003946  Lock_time: 0.002874 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547018288;
+SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IN (SELECT DISTINCT LOGFILE_GROUP_NAME FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('adb'))) GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE ORDER BY LOGFILE_GROUP_NAME;
+# User@Host: root[root] @ localhost []  Id:     9
+# Query_time: 0.003055  Lock_time: 0.001163 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547018288;
+SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('adb')) ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME;
+# Time: 190109  7:21:10
+# User@Host: root[root] @ localhost []  Id:    10
+# Query_time: 0.058262  Lock_time: 0.000220 Rows_sent: 1  Rows_examined: 69738
+SET timestamp=1547018470;
+select count(*) from payment;
+# Time: 190109  7:21:15
+# User@Host: root[root] @ localhost []  Id:    10
+# Query_time: 0.028096  Lock_time: 0.000203 Rows_sent: 1  Rows_examined: 71251
+SET timestamp=1547018475;
+select count(*) from payment;
+# Time: 190109  7:21:18
+# User@Host: root[root] @ localhost []  Id:    10
+# Query_time: 0.048424  Lock_time: 0.000158 Rows_sent: 1  Rows_examined: 72010
+SET timestamp=1547018478;
+select count(*) from payment;
+# Time: 190109  7:21:19
+# User@Host: root[root] @ localhost []  Id:    10
+# Query_time: 0.026806  Lock_time: 0.000093 Rows_sent: 1  Rows_examined: 72336
+SET timestamp=1547018479;
+select count(*) from payment;
+# Time: 190109  7:23:23
+# User@Host: root[root] @ localhost []  Id:    11
+# Query_time: 0.171370  Lock_time: 0.000238 Rows_sent: 1  Rows_examined: 62096
+SET timestamp=1547018603;
+select count(*) from customer;
+# Time: 190109  7:23:37
+# User@Host: root[root] @ localhost []  Id:    11
+# Query_time: 5.412409  Lock_time: 0.000364 Rows_sent: 1  Rows_examined: 4175599
+SET timestamp=1547018617;
+select count(*) from rental;
+# Time: 190109  7:53:49
+# User@Host: root[root] @  [172.17.0.8]  Id:     7
+# Query_time: 6.031072  Lock_time: 0.000465 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547020429;
+INSERT INTO payment (id,date_of_payment,amount,id_rental) VALUES(0,'2018-11-10 1:32:00',7.53,1163049);
+# Time: 190109  8:11:37
+# User@Host: root[root] @  [172.17.0.8]  Id:     7
+# Query_time: 7.509387  Lock_time: 0.000124 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547021497;
+INSERT INTO payment (id,date_of_payment,amount,id_rental) VALUES(0,'2018-2-2 7:7:00',6.46,1692343);
+# Time: 190109  8:14:08
+# User@Host: root[root] @  [172.17.0.8]  Id:     7
+# Query_time: 5.151086  Lock_time: 0.000406 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547021648;
+INSERT INTO payment (id,date_of_payment,amount,id_rental) VALUES(0,'2018-10-24 23:52:00',5.75,1756365);
+# Time: 190109  8:21:52
+# User@Host: root[root] @  [172.17.0.8]  Id:     7
+# Query_time: 6.885714  Lock_time: 0.000340 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547022112;
+INSERT INTO payment (id,date_of_payment,amount,id_rental) VALUES(0,'2018-4-17 10:48:00',0.43,1981995);
+# Time: 190109  8:32:10
+# User@Host: root[root] @  [172.17.0.8]  Id:     7
+# Query_time: 6.640106  Lock_time: 0.000066 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547022730;
+INSERT INTO payment (id,date_of_payment,amount,id_rental) VALUES(0,'2018-3-15 0:47:00',1.64,2284227);
+# Time: 190109  9:02:01
+# User@Host: root[root] @  [172.17.0.8]  Id:     7
+# Query_time: 5.695159  Lock_time: 0.000171 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547024521;
+INSERT INTO payment (id,date_of_payment,amount,id_rental) VALUES(0,'2018-5-1 22:6:00',5.2,3173874);
+# Time: 190109  9:28:03
+# User@Host: root[root] @  [172.17.0.8]  Id:     7
+# Query_time: 5.734345  Lock_time: 0.000099 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547026083;
+INSERT INTO payment (id,date_of_payment,amount,id_rental) VALUES(0,'2018-2-1 10:29:00',0.29,3979773);
+# Time: 190109 10:00:29
+# User@Host: root[root] @  [172.17.0.8]  Id:     7
+# Query_time: 6.199943  Lock_time: 0.000537 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547028029;
+INSERT INTO payment (id,date_of_payment,amount,id_rental) VALUES(0,'2018-5-30 22:5:00',1.59,4960627);
+# Time: 190109 10:17:34
+# User@Host: root[root] @  [172.17.0.8]  Id:     7
+# Query_time: 9.012812  Lock_time: 0.000367 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547029054;
+INSERT INTO payment (id,date_of_payment,amount,id_rental) VALUES(0,'2018-2-17 0:34:00',6.76,5475723);
+# Time: 190109 10:19:14
+# User@Host: root[root] @  [172.17.0.8]  Id:     7
+# Query_time: 5.792525  Lock_time: 0.000390 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547029154;
+INSERT INTO payment (id,date_of_payment,amount,id_rental) VALUES(0,'2018-12-8 8:48:00',0.72,5510770);
+# Time: 190113 21:03:08
+# User@Host: root[root] @ localhost []  Id:    13
+# Query_time: 98.457576  Lock_time: 0.029141 Rows_sent: 1  Rows_examined: 4175599
+SET timestamp=1547413388;
+select count(*) from rental;
+# Time: 190113 21:04:44
+# User@Host: root[root] @ localhost []  Id:    13
+# Query_time: 8.484029  Lock_time: 0.000846 Rows_sent: 1  Rows_examined: 4152564
+SET timestamp=1547413484;
+select count(*) from payment;
+# Time: 190113 21:05:29
+# User@Host: root[root] @ localhost []  Id:    13
+# Query_time: 1.046600  Lock_time: 0.000947 Rows_sent: 1  Rows_examined: 62096
+SET timestamp=1547413529;
+select count(*) from customer;
+# Time: 190113 21:05:33
+# User@Host: root[root] @ localhost []  Id:    13
+# Query_time: 0.033155  Lock_time: 0.002376 Rows_sent: 1  Rows_examined: 1000
+SET timestamp=1547413533;
+select count(*) from movie;
+# Time: 190113 21:06:06
+# User@Host: root[root] @ localhost []  Id:    14
+# Query_time: 0.557994  Lock_time: 0.469924 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547413566;
+SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IN (SELECT DISTINCT LOGFILE_GROUP_NAME FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('adb'))) GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE ORDER BY LOGFILE_GROUP_NAME;
+# User@Host: root[root] @ localhost []  Id:    14
+# Query_time: 0.056165  Lock_time: 0.001414 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1547413566;
+SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('adb')) ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME;
+# User@Host: root[root] @ localhost []  Id:    14
+# Query_time: 0.166418  Lock_time: 0.000000 Rows_sent: 10000  Rows_examined: 10000
+SET timestamp=1547413566;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `actor`;
+# Time: 190113 21:06:07
+# User@Host: root[root] @ localhost []  Id:    14
+# Query_time: 0.065731  Lock_time: 0.000000 Rows_sent: 10000  Rows_examined: 10000
+SET timestamp=1547413567;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `actor_movie`;
+# User@Host: root[root] @ localhost []  Id:    14
+# Query_time: 0.307264  Lock_time: 0.000000 Rows_sent: 62096  Rows_examined: 62096
+SET timestamp=1547413567;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `customer`;
+# User@Host: root[root] @ localhost []  Id:    14
+# Query_time: 0.031377  Lock_time: 0.000000 Rows_sent: 1000  Rows_examined: 1000
+SET timestamp=1547413567;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `movie`;
+# User@Host: root[root] @ localhost []  Id:    14
+# Query_time: 0.012063  Lock_time: 0.000000 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1547413567;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `movie_genre`;
+# Time: 190113 21:06:31
+# User@Host: root[root] @ localhost []  Id:    14
+# Query_time: 24.393423  Lock_time: 0.000000 Rows_sent: 4152564  Rows_examined: 4152564
+SET timestamp=1547413591;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `payment`;
+# Time: 190113 21:07:01
+# User@Host: root[root] @ localhost []  Id:    14
+# Query_time: 29.276558  Lock_time: 0.000000 Rows_sent: 4175599  Rows_examined: 4175599
+SET timestamp=1547413621;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `rental`;
+# Time: 190113 21:17:31
+# User@Host: root[root] @ localhost []  Id:    13
+# Query_time: 185.187882  Lock_time: 0.001349 Rows_sent: 0  Rows_examined: 4093884
+SET timestamp=1547414251;
+SELECT genre_name, count(*), monthname(date_of_rental) from rental inner join movie on rental.id_movie = movie.id inner join movie_genre on movie_genre.id=movie.genre;
+# Time: 190113 21:20:19
+# User@Host: root[root] @ localhost []  Id:    13
+# Query_time: 160.155666  Lock_time: 0.001276 Rows_sent: 5  Rows_examined: 4176604
+SET timestamp=1547414419;
+SELECT genre_name, count(*), monthname(date_of_rental) from rental inner join movie on rental.id_movie = movie.id inner join movie_genre on movie_genre.id=movie.genre group by movie_genre.id;
+# Time: 190113 21:36:17
+# User@Host: root[root] @ localhost []  Id:    13
+# Query_time: 452.953213  Lock_time: 0.001326 Rows_sent: 5  Rows_examined: 8329168
+SET timestamp=1547415377;
+SELECT genre_name, count(*), monthname(date_of_rental) from rental inner join movie on rental.id_movie = movie.id inner join movie_genre on movie_genre.id=movie.genre inner join payment on rental.id=payment.id_rental group by movie_genre.id;
+# Time: 190113 21:49:55
+# User@Host: root[root] @ localhost []  Id:    13
+# Query_time: 769.987465  Lock_time: 0.001468 Rows_sent: 5  Rows_examined: 8329168
+SET timestamp=1547416195;
+SELECT genre_name, count(*), monthname(date_of_rental), avg(amount) from rental inner join movie on rental.id_movie = movie.id inner join movie_genre on movie_genre.id=movie.genre inner join payment on rental.id=payment.id_rental group by movie_genre.id;
+# Time: 190113 22:02:44
+# User@Host: root[root] @ localhost []  Id:    13
+# Query_time: 744.091626  Lock_time: 0.001404 Rows_sent: 60  Rows_examined: 8329288
+SET timestamp=1547416964;
+SELECT genre_name, count(*), monthname(date_of_rental), avg(amount) from rental inner join movie on rental.id_movie = movie.id inner join movie_genre on movie_genre.id=movie.genre inner join payment on rental.id=payment.id_rental group by movie_genre.id,monthname(date_of_rental);
+# Time: 190113 22:24:18
+# User@Host: root[root] @ localhost []  Id:    16
+# Query_time: 32.834282  Lock_time: 0.000968 Rows_sent: 1  Rows_examined: 4237695
+SET timestamp=1547418258;
+select id_customer,count(*) from customer inner join rental on customer.id=rental.id_customer;
+# Time: 190113 22:24:57
+# User@Host: root[root] @ localhost []  Id:    16
+# Query_time: 5.381655  Lock_time: 0.001191 Rows_sent: 62096  Rows_examined: 4361887
+SET timestamp=1547418297;
+select id_customer,count(*) from customer inner join rental on customer.id=rental.id_customer group by id_customer;
+# Time: 190113 22:34:52
+# User@Host: root[root] @ localhost []  Id:    16
+# Query_time: 513.413633  Lock_time: 0.002169 Rows_sent: 62096  Rows_examined: 8514451
+SET timestamp=1547418892;
+select id_customer,count(*),avg(amount),max(amount), min(amount) from customer inner join rental on customer.id=rental.id_customer inner join payment on payment.id_rental=rental.id group by id_customer;
+# Time: 190113 22:45:03
+# User@Host: root[root] @ localhost []  Id:    16
+# Query_time: 416.860875  Lock_time: 0.001402 Rows_sent: 310480  Rows_examined: 8973163
+SET timestamp=1547419503;
+select id_customer,genre_name,count(*) from customer inner join rental on rental.id_customer=customer.id inner join movie on rental.id_movie=movie.id inner join movie_genre on movie.genre=movie_genre.id group by id_customer,movie_genre.id;
+# Time: 190113 22:50:04
+# User@Host: root[root] @ localhost []  Id:    17
+# Query_time: 55.839690  Lock_time: 0.001714 Rows_sent: 62096  Rows_examined: 1645177
+SET timestamp=1547419804;
+select id_customer,genre_name,count(*) from customer inner join rental on rental.id_customer=customer.id inner join movie on rental.id_movie=movie.id inner join movie_genre on movie.genre=movie_genre.id WHERE movie_genre.genre_name like '%horro%' group by id_customer,movie_genre.id;
